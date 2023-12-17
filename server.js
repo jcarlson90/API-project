@@ -1,5 +1,5 @@
 require('dotenv').config();
-require('./config/databse')
+require('./congif/database');
 const PORT = process.env.PORT || 8000;
 const app = require('/app-server.js')
 
