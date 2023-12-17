@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken')
 
 module.exports = (req, res, next) => {
     let toekn = req.get('Authorization')
-    if(token){
+    if (token) {
         token = token.split(' ')[1]
         jwt.verify(toekn, process.env.SECRET, (error, decoded) => {
             req.user = err ? null : decoded.user
@@ -15,6 +15,6 @@ module.exports = (req, res, next) => {
         return next()
     } else {
         req.user = null
-         return next()
+        return next()
     }
 }
